@@ -1,5 +1,5 @@
 #pragma once
-#include "luping-module.h"
+#include "luping-module-interface.h"
 
 class LupingModules {
  public:

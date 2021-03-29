@@ -1,14 +1,16 @@
 #include "debug.h"
 
-#include <Arduino.h>
 #include <stdarg.h>
+
+#include "luping.h"
+#include "modules.h"
 
 namespace lp {
 
 void initDebug() {
   Serial.begin(115200);
   delay(1000);
-  printf("Welcome!");
+  printf("Welcome! %d\n", battery->getVbat());
 }
 void print() {}
 

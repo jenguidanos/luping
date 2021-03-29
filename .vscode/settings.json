@@ -1,3 +1,20 @@
 {
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.tcc": "cpp",
+    "exception": "cpp",
+    "optional": "cpp",
+    "algorithm": "cpp",
+    "fstream": "cpp",
+    "future": "cpp",
+    "initializer_list": "cpp",
+    "istream": "cpp",
+    "mutex": "cpp",
+    "ostream": "cpp",
+    "numeric": "cpp",
+    "streambuf": "cpp",
+    "thread": "cpp",
+    "functional": "cpp",
+    "type_traits": "cpp"
+  }
 }

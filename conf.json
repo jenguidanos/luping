@@ -1,5 +1,15 @@
 {
-  "system": {
-    "test": "\"Mola Mazo\""
+  "modules": ["battery"],
+  "settings": {
+    "battery": {
+      "minVbat": 3000.30,
+      "test": true
+    },
+    "test": {
+      "mola": "mazo"
+    }
+  },
+  "macros": {
+    "SERIAL_DEBUG": "Serial"
   }
 }

@@ -13,5 +13,5 @@ void loop();
 
 }  // namespace lp
 
-#include "luping-conf.h"
-#include "modules/debug.h"
+#include "conf/luping-conf.h"
+#include "core-modules/debug.h"

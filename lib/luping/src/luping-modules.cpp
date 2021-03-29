@@ -1,5 +1,9 @@
 #include "luping-modules.h"
 
+#include <stdarg.h>
+
+#include "luping.h"
+
 LupingModules::LupingModules(const size_t size) {
   this->modules = new LupingModule*[size];
 }
