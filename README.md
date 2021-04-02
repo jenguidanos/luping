@@ -1,6 +1,4 @@
-# Luping `:loop:`
-
-movie_camera :bowtie:
+# Luping :loop:
 
 Luping is a framework that helps you to organize and develop large applications with Arduino. It offers an opinionated approach using as a base the creation of independent modules.
 
