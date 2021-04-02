@@ -23,18 +23,16 @@ uint8_t LupingModules::add(LupingModule* module) {
 }
 
 uint8_t LupingModules::loop() {
-  // this->modules[0]->enable();
-
-  this->running++;
   if (this->running + 1 >= this->maxModules) {
     this->running = 0;
   }
 
-  static uint32_t timeout = millis();
-  if (millis() - timeout > 1000) {
-    timeout = millis();
-    lp::printf("Battery: %d", battery->getVbat());
+  if (this->modules[this->running]) {
+    this->modules[this->running]->test();
+    this->modules[this->running]->loop();
   }
+
+  this->running++;
 
   return 0;
 }

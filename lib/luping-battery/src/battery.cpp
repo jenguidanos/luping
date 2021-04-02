@@ -9,11 +9,14 @@ uint8_t BatteryModule::init() {
   return 0;
 }
 
-uint8_t BatteryModule::loop() { return 0; }
-
-uint8_t BatteryModule::enable() { return 0; }
-
-uint8_t BatteryModule::disable() { return 0; }
+uint8_t BatteryModule::loop() {
+  static uint32_t timeout = millis();
+  while (millis() - timeout >= 1000) {
+    lp::printf("Loop from battery\n");
+    timeout = millis();
+  }
+  return 0;
+}
 
 int BatteryModule::getVbat() {
   // lp::wait(5000, []() { return 10; });
