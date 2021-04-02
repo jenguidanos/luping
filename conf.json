@@ -7,7 +7,7 @@
       "test": true
     },
     "led": {
-      "time": 100,
+      "time": 300,
       "pin": 12
     }
   },

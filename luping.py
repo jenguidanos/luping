@@ -224,4 +224,4 @@ class Modules:
 confJson = ConfJson()
 Macros(confJson.data['macros'])
 Conf(confJson.data['settings'])
-Modules(confJson.data['modules'])
+# Modules(confJson.data['modules'])

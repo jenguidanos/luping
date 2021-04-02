@@ -12,7 +12,7 @@ struct BatteryConf {
 };
 
 struct LedConf {
-  int time = 100;
+  int time = 300;
   int pin = 12;
 };
 

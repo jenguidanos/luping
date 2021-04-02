@@ -16,6 +16,8 @@
     "thread": "cpp",
     "functional": "cpp",
     "type_traits": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "array": "cpp",
+    "random": "cpp"
   }
 }

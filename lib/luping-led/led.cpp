@@ -1,10 +1,11 @@
 #include "led.h"
 
-#include "luping.h"
+#include "modules.h"
 
 uint8_t LedModule::init() {
   lp::printf("Hello From led!!\n");
   pinMode(lp::conf.led.pin, OUTPUT);
+  lp::on(0x01, LedModule::onBattery);
   return 0;
 }
 
@@ -16,3 +17,8 @@ uint8_t LedModule::loop() {
 }
 
 int LedModule::getVbat() { return 0; }
+
+lupingEvent LedModule::onBattery(int param) {
+  lp::printf("Led: onBattery from lupingEvent: %d\n", battery->getVbat());
+  return 0;
+}
