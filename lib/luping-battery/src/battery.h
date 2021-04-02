@@ -5,11 +5,13 @@
 class BatteryModule : public LupingModule {
  public:
   BatteryModule();
-  virtual ~BatteryModule();
+  ~BatteryModule();
+  using LupingModule::init;
 
+  virtual uint8_t loop();
   virtual uint8_t init();
-  virtual uint8_t enable();
-  virtual uint8_t disable();
+  uint8_t disable();
+  uint8_t enable();
 
   static int getVbat();
 };

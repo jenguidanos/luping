@@ -9,17 +9,13 @@ LupingModules modules(LUPING_MAX_MODULES);
 void begin() {
   lp::initConf();
   lp::initDebug();
-  lp::modules.begin();
+  lp::customModules();
 }
 
-void loop() {
-  static uint32_t timeout = millis();
-  if (millis() - timeout > 1000) {
-    timeout = millis();
-    lp::printf("%s: %d", "Battery", battery->getVbat());
-  }
-}
+void yield() {}
+
+void wait(unsigned long waitMillis) {}
 
 }  // namespace lp
 
-void loop() { lp::loop(); }
+void loop() { lp::modules.loop(); }

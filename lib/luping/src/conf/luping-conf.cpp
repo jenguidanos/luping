@@ -8,10 +8,9 @@ namespace lp {
 struct LupingConf conf;
 
 struct BatteryConf batteryConf;
-struct TestConf testConf;
 
 void initConf() {
-  conf = {batteryConf, testConf};
+  conf = {batteryConf};
 }
 
 }  // namespace lp

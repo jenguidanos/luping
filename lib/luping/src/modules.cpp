@@ -2,7 +2,7 @@
 
 #include "luping.h"
 
-BatteryModule *battery;
+BatteryModule *battery = new BatteryModule();
 
 namespace lp {
 

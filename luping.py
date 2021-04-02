@@ -204,7 +204,7 @@ class Modules:
         for prop in data:
             self.cbuffer += f'  lp::modules.add({prop});\n'
             self.cstruct += (
-                f'{prop.capitalize()}Module *{prop};\n'
+                f'{prop.capitalize()}Module *{prop} = new {prop.capitalize()}Module();\n'
             )
 
     def crateFile(self):

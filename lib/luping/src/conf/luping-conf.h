@@ -7,17 +7,13 @@ namespace lp {
 
 struct BatteryConf {
   float minVbat = 3000.3;
+  float minVsys = 3000.3;
   bool test = true;
-};
-
-struct TestConf {
-  char mola[5] = { "mazo" };
 };
 
 
 struct LupingConf {
   BatteryConf battery;
-  TestConf test;
 };
 
 extern LupingConf conf;

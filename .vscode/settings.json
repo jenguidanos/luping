@@ -15,6 +15,7 @@
     "streambuf": "cpp",
     "thread": "cpp",
     "functional": "cpp",
-    "type_traits": "cpp"
+    "type_traits": "cpp",
+    "cmath": "cpp"
   }
 }

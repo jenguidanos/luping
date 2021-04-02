@@ -3,13 +3,12 @@
   "settings": {
     "battery": {
       "minVbat": 3000.30,
+      "minVsys": 3000.30,
       "test": true
-    },
-    "test": {
-      "mola": "mazo"
     }
   },
   "macros": {
+    "LUPING_MAX_MODULES": 5,
     "SERIAL_DEBUG": "Serial"
   }
 }
