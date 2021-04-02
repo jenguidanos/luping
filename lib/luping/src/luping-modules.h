@@ -7,16 +7,15 @@ class LupingModules {
 
   uint8_t begin();
   uint8_t add(LupingModule* module);
-  uint8_t enable(LupingModule* module);
-  uint8_t disable(LupingModule* module);
   uint8_t loop();
+
+  void wait(uint32_t mill);
 
  private:
   int running;
   int maxModules;
   LupingModule** modules;
   int* enabled;
-  int* yielding;
 
   int getEmptyIndex();
   int getModule(LupingModule* module);

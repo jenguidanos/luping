@@ -1,10 +1,14 @@
 {
-  "modules": ["battery"],
+  "modules": ["battery", "led"],
   "settings": {
     "battery": {
       "minVbat": 3000.30,
       "minVsys": 3000.30,
       "test": true
+    },
+    "led": {
+      "time": 100,
+      "pin": 12
     }
   },
   "macros": {

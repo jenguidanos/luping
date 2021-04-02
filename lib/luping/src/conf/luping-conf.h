@@ -11,9 +11,15 @@ struct BatteryConf {
   bool test = true;
 };
 
+struct LedConf {
+  int time = 100;
+  int pin = 12;
+};
+
 
 struct LupingConf {
   BatteryConf battery;
+  LedConf led;
 };
 
 extern LupingConf conf;

@@ -5,6 +5,8 @@
 
 #include "battery.h"
 extern BatteryModule *battery;
+#include "led.h"
+extern LedModule *led;
 
 namespace lp {
 void customModules();

@@ -14,7 +14,7 @@ void begin() {
 
 void yield() {}
 
-void wait(unsigned long waitMillis) {}
+void wait(unsigned long waitMillis) { modules.wait(waitMillis); }
 
 }  // namespace lp
 

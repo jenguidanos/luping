@@ -14,8 +14,6 @@ class LupingModule {
 
   bool isEnabled() { return this->enabled; };
 
-  void test() {}
-
  private:
   bool enabled = false;
 };

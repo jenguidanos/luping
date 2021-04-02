@@ -8,7 +8,6 @@
 LupingModules::LupingModules(const int size) {
   this->modules = new LupingModule*[size];
   this->enabled = new int[size];
-  this->yielding = new int[size];
   this->maxModules = size;
   this->reset();
 }
@@ -16,30 +15,29 @@ LupingModules::LupingModules(const int size) {
 uint8_t LupingModules::add(LupingModule* module) {
   int index = this->getEmptyIndex();
   if (index == -1) return 1;
-  lp::printf("index %d\n", index);
+
   this->modules[index] = module;
-  this->modules[index]->init();
-  return 0;
+  this->modules[index]->enable();
+  return this->modules[index]->init();
 }
 
 uint8_t LupingModules::loop() {
-  if (this->running + 1 >= this->maxModules) {
+  if (this->running >= this->maxModules) {
     this->running = 0;
   }
 
-  if (this->modules[this->running]) {
-    this->modules[this->running]->test();
-    this->modules[this->running]->loop();
+  int i = this->running;
+
+  if (this->modules[i] == 0 || !this->modules[i]->isEnabled()) {
+    this->running++;
+    return 0;
   }
 
+  this->modules[i]->loop();
   this->running++;
 
   return 0;
 }
-
-uint8_t LupingModules::enable(LupingModule* module) { return 0; }
-
-uint8_t LupingModules::disable(LupingModule* module) { return 0; }
 
 uint8_t LupingModules::begin() { return 0; }
 
@@ -52,7 +50,6 @@ void LupingModules::reset() {
 
 void LupingModules::reset(int index) {
   this->modules[index] = 0;
-  this->yielding[index] = 0;
   this->enabled[index] = 0;
 }
 
@@ -75,4 +72,17 @@ int LupingModules::getModule(LupingModule* module) {
   }
 
   return result;
+}
+
+void LupingModules::wait(uint32_t mill) {
+  int i = this->running;
+
+  this->modules[i]->disable();
+
+  uint32_t timeout = millis();
+  while (millis() - timeout < mill) {
+    this->loop();
+  }
+
+  this->modules[i]->enable();
 }
